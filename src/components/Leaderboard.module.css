@@ -1,0 +1,35 @@
+.section { padding: 100px 5%; background: var(--bg-card); }
+.tableWrap { overflow-x: auto; }
+.table { width: 100%; border-collapse: collapse; }
+.table th {
+  padding: 12px 16px; text-align: left; font-size: 0.7rem;
+  letter-spacing: 3px; text-transform: uppercase; color: var(--text-dim);
+  border-bottom: 1px solid var(--border); font-weight: 600;
+}
+.table td { padding: 16px; vertical-align: middle; }
+.row { border-bottom: 1px solid rgba(0,212,255,0.05); transition: background 0.2s; }
+.row:hover { background: rgba(0,255,136,0.03); }
+
+.rank { font-family: 'Orbitron', monospace; font-size: 1rem; font-weight: 700; color: var(--text-dim); }
+.gold { color: #ffd700; text-shadow: 0 0 12px rgba(255,215,0,0.5); }
+.silver { color: #c0c0c0; }
+.bronze { color: #cd7f32; }
+
+.player { display: flex; align-items: center; gap: 12px; }
+.avatar {
+  width: 42px; height: 42px; border-radius: 50%;
+  border: 2px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Orbitron', monospace; font-size: 0.85rem; font-weight: 700;
+  color: var(--bg-deep); flex-shrink: 0;
+}
+.name { font-weight: 700; font-size: 0.95rem; }
+.country { font-size: 0.75rem; color: var(--text-dim); }
+.score { font-family: 'Orbitron', monospace; font-size: 0.9rem; font-weight: 700; color: var(--neon-green); }
+.wins { font-family: 'Share Tech Mono', monospace; font-size: 0.85rem; color: var(--text-dim); }
+
+.barWrap { width: 120px; height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; }
+.bar { height: 100%; background: linear-gradient(90deg, var(--neon-green), var(--neon-blue)); border-radius: 2px; width: 0; transition: width 1s ease; }
+
+@media (max-width: 900px) { .hideSmall { display: none; } }
+@media (max-width: 600px) { .hideMobile { display: none; } }

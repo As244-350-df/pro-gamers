@@ -1,0 +1,23 @@
+.section {
+  background: linear-gradient(135deg, rgba(0,255,136,0.04) 0%, rgba(0,212,255,0.04) 100%);
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  text-align: center; padding: 80px 5%;
+}
+.box { max-width: 520px; margin: 0 auto; }
+.sub { color: var(--text-dim); margin-top: 12px; }
+.form { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; justify-content: center; }
+.input {
+  flex: 1; min-width: 220px; padding: 14px 20px;
+  background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+  color: var(--text-main); font-family: 'Rajdhani', sans-serif; font-size: 0.95rem;
+  outline: none;
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  transition: border-color 0.3s;
+}
+.input:focus { border-color: var(--neon-green); }
+.input::placeholder { color: var(--text-dim); }
+.success {
+  margin-top: 32px; padding: 16px 24px;
+  background: rgba(0,255,136,0.1); border: 1px solid rgba(0,255,136,0.3);
+  color: var(--neon-green); font-size: 1rem; font-weight: 600;
+}

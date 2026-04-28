@@ -1,0 +1,19 @@
+.wrap {
+  background: rgba(0,255,136,0.05);
+  border-top: 1px solid rgba(0,255,136,0.2);
+  border-bottom: 1px solid rgba(0,255,136,0.2);
+  padding: 12px 0; overflow: hidden; white-space: nowrap;
+}
+.track {
+  display: inline-block;
+  animation: ticker 40s linear infinite;
+}
+@keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+.item {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin: 0 40px; font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem; color: var(--neon-green); letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.dot { width: 6px; height: 6px; background: var(--neon-green); border-radius: 50%; flex-shrink: 0; }

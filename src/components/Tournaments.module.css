@@ -1,0 +1,47 @@
+.section { padding: 100px 5%; background: var(--bg-deep); }
+
+.grid { display: grid; gap: 16px; }
+
+.card {
+  display: grid; grid-template-columns: auto 1fr auto;
+  align-items: center; gap: 24px; padding: 24px 28px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  transition: border-color 0.3s, background 0.3s; cursor: pointer;
+  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
+}
+.card:hover { border-color: var(--neon-green); background: rgba(0,255,136,0.03); }
+
+.rank {
+  font-family: 'Orbitron', monospace; font-size: 2.5rem; font-weight: 900;
+  color: rgba(0,255,136,0.15); line-height: 1; min-width: 60px; text-align: center;
+}
+
+.info { min-width: 0; }
+.game { font-size: 0.7rem; letter-spacing: 3px; color: var(--neon-blue); text-transform: uppercase; margin-bottom: 4px; }
+.name {
+  font-family: 'Orbitron', monospace; font-size: 1.05rem; font-weight: 700;
+  margin-bottom: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.tag {
+  padding: 3px 10px; font-size: 0.65rem; letter-spacing: 2px;
+  text-transform: uppercase; border: 1px solid var(--border); color: var(--text-dim);
+}
+.tagLive { border-color: var(--neon-red); color: var(--neon-red); animation: livePulse 1.5s infinite; }
+.tagOpen { border-color: #ffc800; color: #ffc800; }
+
+.prize { text-align: right; }
+.prizeAmount {
+  font-family: 'Orbitron', monospace; font-size: 1.4rem; font-weight: 900;
+  color: var(--neon-green); text-shadow: var(--glow-green); white-space: nowrap;
+}
+.prizeLabel { font-size: 0.7rem; letter-spacing: 2px; color: var(--text-dim); text-transform: uppercase; }
+
+@media (max-width: 900px) {
+  .card { grid-template-columns: auto 1fr; }
+  .prize { display: none; }
+}
+@media (max-width: 600px) {
+  .card { grid-template-columns: 1fr; }
+  .rank { display: none; }
+}

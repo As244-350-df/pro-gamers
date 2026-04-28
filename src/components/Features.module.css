@@ -1,0 +1,25 @@
+.section { padding: 100px 5%; background: var(--bg-deep); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+
+.card {
+  padding: 32px 28px; background: var(--bg-card); border: 1px solid var(--border);
+  position: relative; overflow: hidden; cursor: pointer;
+  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
+  transition: border-color 0.3s;
+}
+.card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--neon-green), var(--neon-blue));
+  transform: scaleX(0); transform-origin: left; transition: transform 0.4s;
+}
+.card:hover { border-color: var(--neon-green); }
+.card:hover::before { transform: scaleX(1); }
+
+.icon {
+  width: 56px; height: 56px; margin-bottom: 20px;
+  background: rgba(0,255,136,0.08); border: 1px solid rgba(0,255,136,0.2);
+  display: flex; align-items: center; justify-content: center; font-size: 1.6rem;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+}
+.title { font-family: 'Orbitron', monospace; font-size: 0.95rem; font-weight: 700; margin-bottom: 10px; }
+.desc { color: var(--text-dim); font-size: 0.9rem; line-height: 1.7; }

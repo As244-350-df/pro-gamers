@@ -1,0 +1,76 @@
+.nav {
+  position: fixed; top: 0; width: 100%; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 5%;
+  background: rgba(2, 4, 8, 0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s;
+}
+.scrolled { background: rgba(2, 4, 8, 0.98); }
+
+.logo {
+  font-family: 'Orbitron', monospace;
+  font-size: 1.4rem; font-weight: 900;
+  color: var(--neon-green);
+  text-shadow: var(--glow-green);
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+.logo span { color: var(--neon-blue); }
+
+.links {
+  display: flex; gap: 32px; list-style: none;
+}
+.links a {
+  color: var(--text-dim); text-decoration: none;
+  font-size: 0.85rem; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase; transition: color 0.2s;
+  position: relative;
+}
+.links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0;
+  width: 0; height: 1px; background: var(--neon-green);
+  transition: width 0.3s;
+}
+.links a:hover { color: var(--neon-green); }
+.links a:hover::after { width: 100%; }
+
+.cta {
+  background: transparent; border: 1px solid var(--neon-green);
+  color: var(--neon-green); padding: 10px 24px;
+  font-family: 'Orbitron', monospace; font-size: 0.75rem;
+  font-weight: 700; letter-spacing: 2px; cursor: pointer;
+  text-transform: uppercase; transition: all 0.3s;
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+}
+.cta:hover { background: var(--neon-green); color: var(--bg-deep); box-shadow: var(--glow-green); }
+
+.hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  cursor: pointer; background: none; border: none; padding: 4px;
+}
+.hamburger span { width: 24px; height: 2px; background: var(--neon-green); display: block; }
+
+.mobileMenu {
+  display: none; position: fixed; inset: 0; z-index: 99;
+  background: rgba(2, 4, 8, 0.97); backdrop-filter: blur(16px);
+  flex-direction: column; align-items: center; justify-content: center; gap: 32px;
+}
+.mobileMenu.open { display: flex; }
+.mobileMenu a {
+  font-family: 'Orbitron', monospace; font-size: 1.2rem;
+  color: var(--text-main); text-decoration: none; letter-spacing: 3px; transition: color 0.2s;
+}
+.mobileMenu a:hover { color: var(--neon-green); }
+.closeBtn {
+  position: absolute; top: 24px; right: 5%;
+  font-size: 1.5rem; color: var(--neon-green);
+  background: none; border: none; cursor: pointer;
+  font-family: 'Orbitron', monospace;
+}
+
+@media (max-width: 900px) {
+  .links, .cta { display: none; }
+  .hamburger { display: flex; }
+}
